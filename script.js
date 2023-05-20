@@ -13,17 +13,31 @@ let statsRead = document.querySelector(".stats__read-number");
 let statsToRead = document.querySelector(".stats__to-read-number");
 let statsPages = document.querySelector(".stats__total-pages-number");
 
-function Book(title, author, pages, status) {
-  (this.title = title),
-    (this.author = author),
-    (this.pages = pages),
-    (this.status = status),
-    (this.id = crypto.randomUUID());
-}
+// function Book(title, author, pages, status) {
+//   (this.title = title),
+//     (this.author = author),
+//     (this.pages = pages),
+//     (this.status = status),
+//     (this.id = crypto.randomUUID());
+// }
 
-Book.prototype.addBookToLibrary = function (library) {
-  library.push(this);
-};
+// Book.prototype.addBookToLibrary = function (library) {
+//   library.push(this);
+// };
+
+class Book {
+  constructor(title, author, pages, status) {
+    (this.title = title),
+      (this.author = author),
+      (this.pages = pages),
+      (this.status = status),
+      (this.id = crypto.randomUUID());
+  }
+
+  addBookToLibrary(library) {
+    library.push(this);
+  }
+}
 
 let myLibrary = [];
 
